@@ -8,8 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="accessibility.css">
 </head>
 <body class="font-sans">
+    <!-- Skip Link for Screen Readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Header/Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -63,24 +66,55 @@
                         <h2 class="text-3xl font-bold text-blueberry mb-6">Send Us a Message</h2>
                         <p class="text-sage mb-8">Fill out the form below and we'll get back to you within 24 hours to discuss how we can help your child.</p>
                         
-                        <form id="contact-form" class="space-y-6">
+                        <form id="contact-form" class="space-y-6" aria-labelledby="contact-form-title" novalidate>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
+                                <div class="form-group">
                                     <label for="first-name" class="block text-sage font-medium mb-2">First Name *</label>
-                                    <input type="text" id="first-name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                    <input type="text" 
+                                           id="first-name" 
+                                           name="first-name"
+                                           required 
+                                           aria-required="true"
+                                           aria-describedby="first-name-help"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                    <div id="first-name-help" class="sr-only">Enter your first name as it should appear in our records</div>
                                 </div>
-                                <div>
+                                <div class="form-group">
                                     <label for="last-name" class="block text-sage font-medium mb-2">Last Name *</label>
-                                    <input type="text" id="last-name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                    <input type="text" 
+                                           id="last-name" 
+                                           name="last-name"
+                                           required 
+                                           aria-required="true"
+                                           aria-describedby="last-name-help"
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                    <div id="last-name-help" class="sr-only">Enter your family or last name</div>
                                 </div>
                             </div>
-                            <div>
+                            <div class="form-group">
                                 <label for="email" class="block text-sage font-medium mb-2">Email Address *</label>
-                                <input type="email" id="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                <input type="email" 
+                                       id="email" 
+                                       name="email"
+                                       required 
+                                       aria-required="true"
+                                       aria-describedby="email-help"
+                                       autocomplete="email"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                <div id="email-help" class="sr-only">We'll use this email to respond to your inquiry</div>
                             </div>
-                            <div>
+                            <div class="form-group">
                                 <label for="phone" class="block text-sage font-medium mb-2">Phone Number *</label>
-                                <input type="tel" id="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                <input type="tel" 
+                                       id="phone" 
+                                       name="phone"
+                                       required 
+                                       aria-required="true"
+                                       aria-describedby="phone-help"
+                                       autocomplete="tel"
+                                       pattern="[0-9\s\-\+\(\)]*"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                <div id="phone-help" class="sr-only">Include area code for best response time</div>
                             </div>
                             <div>
                                 <label for="child-age" class="block text-sage font-medium mb-2">Child's Age</label>

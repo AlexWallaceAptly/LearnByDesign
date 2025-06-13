@@ -1,0 +1,232 @@
+/* Accessibility Enhancements */
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--blueberry);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Enhanced Focus Styles */
+*:focus {
+    outline: 3px solid var(--magenta);
+    outline-offset: 2px;
+}
+
+/* Button and Link Focus */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--magenta);
+    outline-offset: 2px;
+}
+
+/* High Contrast Focus for Interactive Elements */
+.btn:focus,
+.service-card:focus,
+.testimonial-card:focus {
+    outline: 3px solid var(--magenta);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px rgba(214, 51, 132, 0.2);
+}
+
+/* Screen Reader Only Text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Enhanced Color Contrast */
+.text-sage {
+    color: #495057; /* Darker for better contrast */
+}
+
+.text-blueberry {
+    color: #5a2d91; /* Slightly darker for better contrast */
+}
+
+/* Reduce Motion for Users with Vestibular Disorders */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .bg-magenta {
+        background-color: #990033;
+    }
+    
+    .bg-blueberry {
+        background-color: #4a1a5c;
+    }
+    
+    .text-sage {
+        color: #000000;
+    }
+    
+    .border-magenta {
+        border-color: #990033;
+        border-width: 2px;
+    }
+    
+    .border-blueberry {
+        border-color: #4a1a5c;
+        border-width: 2px;
+    }
+}
+
+/* Improved Mobile Menu Accessibility */
+.mobile-menu[aria-expanded="true"] {
+    display: block;
+}
+
+.mobile-menu[aria-expanded="false"] {
+    display: none;
+}
+
+/* Enhanced Button Styles for Better Accessibility */
+button,
+.btn {
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+}
+
+button:disabled,
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Form Accessibility Improvements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-error-icon {
+    color: #dc3545;
+    margin-right: 0.5rem;
+}
+
+input:invalid,
+textarea:invalid,
+select:invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+input:valid,
+textarea:valid,
+select:valid {
+    border-color: #28a745;
+}
+
+/* Enhanced List Accessibility */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Card Accessibility */
+.service-card,
+.testimonial-card {
+    position: relative;
+}
+
+.service-card:focus-within,
+.testimonial-card:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading and Error States */
+.loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Ensure minimum contrast ratios */
+.bg-gray-50 {
+    background-color: #f8f9fa;
+}
+
+.text-gray-600 {
+    color: #495057;
+}
+
+/* Improved Link Accessibility */
+a:not(.btn) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover:not(.btn) {
+    text-decoration-thickness: 2px;
+}
+
+/* Status Messages */
+.status-message {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.status-success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.status-error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.status-info {
+    background-color: #cce7ff;
+    border: 1px solid #b8daff;
+    color: #004085;
+} 
