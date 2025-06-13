@@ -40,17 +40,7 @@
     border-color: var(--sage);
 }
 
-.elephant-logo {
-    width: 60px;
-    height: 60px;
-    background-color: var(--blueberry);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 30px;
-}
+
 
 .hero-section {
     background: linear-gradient(135deg, rgba(214, 51, 132, 0.1) 0%, rgba(111, 66, 193, 0.1) 100%);
