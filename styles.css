@@ -1,0 +1,66 @@
+:root {
+    --magenta: #d63384;
+    --blueberry: #6f42c1;
+    --sage: #6c757d;
+}
+
+.bg-magenta {
+    background-color: var(--magenta);
+}
+
+.bg-blueberry {
+    background-color: var(--blueberry);
+}
+
+.bg-sage {
+    background-color: var(--sage);
+}
+
+.text-magenta {
+    color: var(--magenta);
+}
+
+.text-blueberry {
+    color: var(--blueberry);
+}
+
+.text-sage {
+    color: var(--sage);
+}
+
+.border-magenta {
+    border-color: var(--magenta);
+}
+
+.border-blueberry {
+    border-color: var(--blueberry);
+}
+
+.border-sage {
+    border-color: var(--sage);
+}
+
+.elephant-logo {
+    width: 60px;
+    height: 60px;
+    background-color: var(--blueberry);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, rgba(214, 51, 132, 0.1) 0%, rgba(111, 66, 193, 0.1) 100%);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.testimonial-card {
+    background: linear-gradient(135deg, rgba(214, 51, 132, 0.05) 0%, rgba(111, 66, 193, 0.05) 100%);
+} 

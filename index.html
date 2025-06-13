@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn by Design | ABA Therapy Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="elephant-logo">
+                    <i class="fas fa-elephant"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-blueberry">Learn by Design</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-magenta font-medium">Home</a>
+                <a href="services.html" class="text-blueberry font-medium hover:text-magenta transition">Services</a>
+                <a href="about-us.html" class="text-blueberry font-medium hover:text-magenta transition">About Us</a>
+                <a href="testimonials.html" class="text-blueberry font-medium hover:text-magenta transition">Testimonials</a>
+                <a href="contact.html" class="text-blueberry font-medium hover:text-magenta transition">Contact</a>
+            </nav>
+            
+            <button class="md:hidden text-blueberry text-2xl" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-md" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-magenta font-medium">Home</a>
+                <a href="services.html" class="text-blueberry font-medium hover:text-magenta transition">Services</a>
+                <a href="about-us.html" class="text-blueberry font-medium hover:text-magenta transition">About Us</a>
+                <a href="testimonials.html" class="text-blueberry font-medium hover:text-magenta transition">Testimonials</a>
+                <a href="contact.html" class="text-blueberry font-medium hover:text-magenta transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section py-20">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-blueberry mb-6">Personalized ABA Therapy for Lasting Growth</h1>
+                <p class="text-lg text-sage mb-8">At Learn by Design, we create customized ABA programs that help children with autism develop essential life skills through evidence-based practices.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="contact.html" class="bg-magenta text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition text-center">Get Started</a>
+                    <a href="services.html" class="border-2 border-blueberry text-blueberry px-8 py-3 rounded-full font-medium hover:bg-blueberry hover:text-white transition text-center">Our Services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Child learning with therapist" class="rounded-lg shadow-xl w-full max-w-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blueberry mb-4">Our Services</h2>
+                <p class="text-lg text-sage max-w-2xl mx-auto">We offer comprehensive ABA therapy services designed to meet the unique needs of each child and family we serve.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-magenta p-6 text-white">
+                        <i class="fas fa-child text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">Early Intervention</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Specialized programs for children ages 2-6 focusing on communication, social skills, and behavior management.</p>
+                        <ul class="space-y-2 text-sage">
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Individualized treatment plans</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Parent training included</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Play-based learning</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-blueberry p-6 text-white">
+                        <i class="fas fa-school text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">School Readiness</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Programs designed to prepare children for successful integration into school environments.</p>
+                        <ul class="space-y-2 text-sage">
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Classroom behavior skills</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Group instruction readiness</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Academic foundational skills</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-sage p-6 text-white">
+                        <i class="fas fa-home text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">In-Home Therapy</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Personalized therapy sessions conducted in the comfort of your home for optimal learning.</p>
+                        <ul class="space-y-2 text-sage">
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Convenient scheduling</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Natural environment teaching</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Family involvement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10">
+                    <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Therapist working with child" class="rounded-lg shadow-xl">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-blueberry mb-6">About Learn by Design</h2>
+                    <p class="text-sage mb-6">Founded in 2015, Learn by Design has been providing high-quality Applied Behavior Analysis (ABA) therapy to children with autism spectrum disorder and related developmental differences.</p>
+                    <p class="text-sage mb-6">Our team of Board Certified Behavior Analysts (BCBAs) and Registered Behavior Technicians (RBTs) are dedicated to creating meaningful, lasting change through individualized treatment plans.</p>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold text-magenta mb-3">Our Mission</h3>
+                        <p class="text-sage">To empower children with autism to reach their full potential through scientifically validated ABA therapy, while supporting families with compassion and expertise.</p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center bg-blueberry bg-opacity-10 px-4 py-2 rounded-full">
+                            <i class="fas fa-certificate text-blueberry mr-2"></i>
+                            <span class="text-blueberry">BCBA Certified</span>
+                        </div>
+                        <div class="flex items-center bg-magenta bg-opacity-10 px-4 py-2 rounded-full">
+                            <i class="fas fa-heart text-magenta mr-2"></i>
+                            <span class="text-magenta">Compassionate Care</span>
+                        </div>
+                        <div class="flex items-center bg-sage bg-opacity-10 px-4 py-2 rounded-full">
+                            <i class="fas fa-chart-line text-sage mr-2"></i>
+                            <span class="text-sage">Data-Driven</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blueberry mb-4">What Families Say</h2>
+                <p class="text-lg text-sage max-w-2xl mx-auto">Hear from parents who have experienced the Learn by Design difference.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-sage mb-6">"Learn by Design transformed our son's ability to communicate. In just 6 months, he went from being non-verbal to using short sentences. The therapists are amazing!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-blueberry text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span>JM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blueberry">Jessica M.</h4>
+                            <p class="text-sm text-sage">Parent of 4-year-old</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-sage mb-6">"The school readiness program prepared our daughter so well for kindergarten. Her teachers can't believe the progress she's made in such a short time."</p>
+                    <div class="flex items-center">
+                        <div class="bg-magenta text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span>DR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-magenta">David R.</h4>
+                            <p class="text-sm text-sage">Parent of 5-year-old</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-sage mb-6">"What sets Learn by Design apart is their commitment to the whole family. They've taught us strategies that work beyond therapy sessions. Truly life-changing."</p>
+                    <div class="flex items-center">
+                        <div class="bg-sage text-white rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <span>SP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sage">Sarah P.</h4>
+                            <p class="text-sm text-sage">Parent of 7-year-old</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-blueberry to-magenta rounded-xl shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-white p-10">
+                        <h2 class="text-3xl font-bold text-blueberry mb-6">Contact Us</h2>
+                        <p class="text-sage mb-8">Ready to learn more about our ABA therapy services? Fill out the form and we'll get back to you within 24 hours.</p>
+                        
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sage font-medium mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sage font-medium mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sage font-medium mb-1">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sage font-medium mb-1">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition"></textarea>
+                            </div>
+                            <button type="submit" class="bg-magenta text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition w-full">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="md:w-1/2 bg-gradient-to-b from-blueberry to-magenta p-10 text-white flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Our Location</h4>
+                                    <p>123 Therapy Lane, Suite 200<br>Design City, DC 12345</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Call Us</h4>
+                                    <p>(555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Email Us</h4>
+                                    <p>info@learnbydesign.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-xl mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-bold">Hours</h4>
+                                    <p>Monday - Friday: 8am - 6pm<br>Saturday: 9am - 2pm</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-bold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-white bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blueberry text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="elephant-logo">
+                            <i class="fas fa-elephant"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Learn by Design</h3>
+                    </div>
+                    <p class="text-blue-100">Providing exceptional ABA therapy services with compassion and expertise since 2015.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-blue-100 hover:text-white transition">Home</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Services</a></li>
+                        <li><a href="about-us.html" class="text-blue-100 hover:text-white transition">About Us</a></li>
+                        <li><a href="testimonials.html" class="text-blue-100 hover:text-white transition">Testimonials</a></li>
+                        <li><a href="contact.html" class="text-blue-100 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Early Intervention</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">School Readiness</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">In-Home Therapy</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Social Skills Groups</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Parent Training</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-blue-100 mb-4">Subscribe to our newsletter for the latest updates and resources.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full text-blueberry outline-none">
+                        <button type="submit" class="bg-magenta px-4 py-2 rounded-r-lg hover:bg-opacity-90 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-100 mb-4 md:mb-0">© 2023 Learn by Design. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-100 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-blue-100 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-magenta text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html> 

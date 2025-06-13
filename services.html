@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Learn by Design - ABA Therapy Programs</title>
+    <meta name="description" content="Comprehensive ABA therapy services including Early Intervention, School Readiness, In-Home Therapy, and more for children with autism.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="elephant-logo">
+                    <i class="fas fa-elephant"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-blueberry">Learn by Design</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-blueberry font-medium hover:text-magenta transition">Home</a>
+                <a href="services.html" class="text-magenta font-medium">Services</a>
+                <a href="about-us.html" class="text-blueberry font-medium hover:text-magenta transition">About Us</a>
+                <a href="testimonials.html" class="text-blueberry font-medium hover:text-magenta transition">Testimonials</a>
+                <a href="contact.html" class="text-blueberry font-medium hover:text-magenta transition">Contact</a>
+            </nav>
+            
+            <button class="md:hidden text-blueberry text-2xl" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-md" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-blueberry font-medium hover:text-magenta transition">Home</a>
+                <a href="services.html" class="text-magenta font-medium">Services</a>
+                <a href="about-us.html" class="text-blueberry font-medium hover:text-magenta transition">About Us</a>
+                <a href="testimonials.html" class="text-blueberry font-medium hover:text-magenta transition">Testimonials</a>
+                <a href="contact.html" class="text-blueberry font-medium hover:text-magenta transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="hero-section py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-blueberry mb-6">Our ABA Therapy Services</h1>
+            <p class="text-xl text-sage max-w-3xl mx-auto">Comprehensive, evidence-based programs designed to meet the unique needs of each child and family we serve.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-magenta p-6 text-white">
+                        <i class="fas fa-child text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">Early Intervention</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Specialized programs for children ages 2-6 focusing on communication, social skills, and behavior management.</p>
+                        <ul class="space-y-2 text-sage mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Individualized treatment plans</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Parent training included</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Play-based learning</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Communication development</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Social skill building</li>
+                        </ul>
+                        <p class="text-sm text-sage"><strong>Best for:</strong> Toddlers and preschoolers just beginning their ABA journey</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-blueberry p-6 text-white">
+                        <i class="fas fa-school text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">School Readiness</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Programs designed to prepare children for successful integration into school environments.</p>
+                        <ul class="space-y-2 text-sage mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Classroom behavior skills</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Group instruction readiness</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Academic foundational skills</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Following directions</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Peer interaction skills</li>
+                        </ul>
+                        <p class="text-sm text-sage"><strong>Best for:</strong> Children preparing for kindergarten or transitioning to new schools</p>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-sage p-6 text-white">
+                        <i class="fas fa-home text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">In-Home Therapy</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Personalized therapy sessions conducted in the comfort of your home for optimal learning.</p>
+                        <ul class="space-y-2 text-sage mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Convenient scheduling</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Natural environment teaching</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Family involvement</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Flexible hours</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Sibling integration</li>
+                        </ul>
+                        <p class="text-sm text-sage"><strong>Best for:</strong> Families seeking convenience and natural learning environments</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-magenta p-6 text-white">
+                        <i class="fas fa-users text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">Social Skills Groups</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Group therapy sessions focused on developing social interaction and communication skills.</p>
+                        <ul class="space-y-2 text-sage mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Peer interaction practice</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Turn-taking skills</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Conversation skills</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Friendship building</li>
+                            <li class="flex items-center"><i class="fas fa-check text-magenta mr-2"></i> Conflict resolution</li>
+                        </ul>
+                        <p class="text-sm text-sage"><strong>Best for:</strong> Children ready to practice social skills with peers</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-blueberry p-6 text-white">
+                        <i class="fas fa-chalkboard-teacher text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">Parent Training</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Comprehensive training programs to help parents implement ABA strategies at home.</p>
+                        <ul class="space-y-2 text-sage mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Strategy implementation</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Behavior management</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Data collection training</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Progress monitoring</li>
+                            <li class="flex items-center"><i class="fas fa-check text-blueberry mr-2"></i> Ongoing support</li>
+                        </ul>
+                        <p class="text-sm text-sage"><strong>Best for:</strong> Parents wanting to support their child's progress at home</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition duration-300">
+                    <div class="bg-sage p-6 text-white">
+                        <i class="fas fa-brain text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold">Behavior Consultation</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sage mb-4">Expert guidance for challenging behaviors and specialized intervention strategies.</p>
+                        <ul class="space-y-2 text-sage mb-6">
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Functional behavior assessment</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Behavior intervention plans</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Crisis management</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Team collaboration</li>
+                            <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i> Progress evaluation</li>
+                        </ul>
+                        <p class="text-sm text-sage"><strong>Best for:</strong> Complex cases requiring specialized behavior intervention</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Section -->
+            <div class="bg-white rounded-xl p-8 mb-16">
+                <h2 class="text-3xl font-bold text-blueberry text-center mb-8">Our Process</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="bg-magenta text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                        <h3 class="text-xl font-bold text-magenta mb-2">Initial Assessment</h3>
+                        <p class="text-sage">Comprehensive evaluation to understand your child's unique needs and strengths.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-blueberry text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                        <h3 class="text-xl font-bold text-blueberry mb-2">Personalized Plan</h3>
+                        <p class="text-sage">Custom treatment plan designed specifically for your child's goals and learning style.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-sage text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                        <h3 class="text-xl font-bold text-sage mb-2">Implementation</h3>
+                        <p class="text-sage">Begin therapy sessions with our qualified team using evidence-based techniques.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-magenta text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
+                        <h3 class="text-xl font-bold text-magenta mb-2">Progress Monitoring</h3>
+                        <p class="text-sage">Regular review and adjustment of plans based on your child's progress and growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="bg-gradient-to-r from-blueberry to-magenta rounded-xl p-8 text-white text-center">
+                <h2 class="text-3xl font-bold mb-4">Ready to Begin Your Child's Journey?</h2>
+                <p class="text-xl mb-6">Contact us today for a free consultation and learn which program is right for your family.</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="contact.html" class="bg-white text-blueberry px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition">Schedule Consultation</a>
+                    <a href="about-us.html" class="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-blueberry transition">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blueberry text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="elephant-logo">
+                            <i class="fas fa-elephant"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Learn by Design</h3>
+                    </div>
+                    <p class="text-blue-100">Providing exceptional ABA therapy services with compassion and expertise since 2015.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-blue-100 hover:text-white transition">Home</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Services</a></li>
+                        <li><a href="about-us.html" class="text-blue-100 hover:text-white transition">About Us</a></li>
+                        <li><a href="testimonials.html" class="text-blue-100 hover:text-white transition">Testimonials</a></li>
+                        <li><a href="contact.html" class="text-blue-100 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Early Intervention</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">School Readiness</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">In-Home Therapy</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Social Skills Groups</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Parent Training</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-blue-100 mb-4">Subscribe to our newsletter for the latest updates and resources.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full text-blueberry outline-none">
+                        <button type="submit" class="bg-magenta px-4 py-2 rounded-r-lg hover:bg-opacity-90 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-100 mb-4 md:mb-0">© 2023 Learn by Design. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-100 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-blue-100 hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-magenta text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html> 
