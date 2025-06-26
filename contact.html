@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Learn by Design - ABA Therapy Consultation</title>
     <meta name="description" content="Contact Learn by Design for ABA therapy services. Schedule a consultation, get directions to our office, or reach out with questions about our programs.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="Logos/IconOnly_Transparent_NoBuffer.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Logos/IconOnly_Transparent_NoBuffer.png">
+    <link rel="apple-touch-icon" href="Logos/IconOnly_Transparent_NoBuffer.png">
+    <link rel="shortcut icon" href="Logos/IconOnly_Transparent_NoBuffer.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -17,7 +24,7 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-3">
-                <img src="logos/IconOnly_Transparent_NoBuffer.png" alt="Learn by Design Logo" class="h-12 w-auto">
+                <img src="Logos/IconOnly_Transparent_NoBuffer.png" alt="Learn by Design Logo" class="h-12 w-auto">
                 <h1 class="text-2xl font-bold text-blueberry">Learn by Design</h1>
             </div>
             
@@ -60,11 +67,22 @@
             <div class="max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <!-- Contact Form -->
-                    <div class="bg-white p-8 rounded-xl shadow-lg">
-                        <h2 class="text-3xl font-bold text-blueberry mb-6">Send Us a Message</h2>
-                        <p class="text-sage mb-8">Fill out the form below and we'll get back to you within 24 hours to discuss how we can help your child.</p>
+                    <div class="bg-gray-100 p-8 rounded-xl shadow-lg relative">
+                        <!-- Coming Soon Overlay -->
+                        <div class="absolute inset-0 bg-gray-50 bg-opacity-90 rounded-xl flex items-center justify-center z-10">
+                            <div class="text-center max-w-md mx-auto px-4">
+                                <div class="bg-white p-8 rounded-xl shadow-md">
+                                    <i class="fas fa-clock text-6xl text-gray-400 mb-4"></i>
+                                    <h3 class="text-2xl font-bold text-gray-600 mb-4">Coming Soon</h3>
+                                    <p class="text-gray-500 text-center">Our contact form is currently being updated. Please call us directly at <strong>(555) 123-4567</strong> or email <strong>info@learnbydesign.com</strong> to get in touch.</p>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <form id="contact-form" class="space-y-6" aria-labelledby="contact-form-title" novalidate>
+                        <h2 class="text-3xl font-bold text-gray-400 mb-6">Send Us a Message</h2>
+                        <p class="text-gray-400 mb-8">Fill out the form below and we'll get back to you within 24 hours to discuss how we can help your child.</p>
+                        
+                        <form id="contact-form" class="space-y-6 opacity-30" aria-labelledby="contact-form-title" novalidate>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div class="form-group">
                                     <label for="first-name" class="block text-sage font-medium mb-2">First Name *</label>
@@ -85,7 +103,7 @@
                                            required 
                                            aria-required="true"
                                            aria-describedby="last-name-help"
-                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
                                     <div id="last-name-help" class="sr-only">Enter your family or last name</div>
                                 </div>
                             </div>
@@ -98,7 +116,7 @@
                                        aria-required="true"
                                        aria-describedby="email-help"
                                        autocomplete="email"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
                                 <div id="email-help" class="sr-only">We'll use this email to respond to your inquiry</div>
                             </div>
                             <div class="form-group">
@@ -111,12 +129,12 @@
                                        aria-describedby="phone-help"
                                        autocomplete="tel"
                                        pattern="[0-9\s\-\+\(\)]*"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
                                 <div id="phone-help" class="sr-only">Include area code for best response time</div>
                             </div>
                             <div>
                                 <label for="child-age" class="block text-sage font-medium mb-2">Child's Age</label>
-                                <select id="child-age" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                <select id="child-age" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
                                     <option value="">Select age range</option>
                                     <option value="2-3">2-3 years</option>
                                     <option value="4-5">4-5 years</option>
@@ -127,87 +145,27 @@
                             </div>
                             <div>
                                 <label for="service-interest" class="block text-sage font-medium mb-2">Service of Interest</label>
-                                <select id="service-interest" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
+                                <select id="service-interest" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
                                     <option value="">Select a service</option>
-                                    <option value="early-intervention">Early Intervention</option>
-                                    <option value="school-readiness">School Readiness</option>
-                                    <option value="in-home">In-Home Therapy</option>
-                                    <option value="social-skills">Social Skills Groups</option>
-                                    <option value="parent-training">Parent Training</option>
-                                    <option value="consultation">Behavior Consultation</option>
+                                                                <option value="early-development">Early Development Support</option>
+                            <option value="in-home">In-Home Therapy</option>
+                            <option value="caregiver-training">Caregiver Training</option>
                                     <option value="not-sure">Not sure - need guidance</option>
                                 </select>
                             </div>
                             <div>
                                 <label for="message" class="block text-sage font-medium mb-2">Message</label>
-                                <textarea id="message" rows="4" placeholder="Tell us about your child's needs, your goals, or any questions you have..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition resize-vertical"></textarea>
+                                <textarea id="message" rows="4" placeholder="Tell us about your child's needs, your goals, or any questions you have..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition resize-vertical" disabled></textarea>
                             </div>
                             <div class="flex items-start">
-                                <input type="checkbox" id="consent" required class="mt-1 mr-3">
-                                <label for="consent" class="text-sm text-sage">I consent to being contacted by Learn by Design regarding ABA therapy services. *</label>
+                                <input type="checkbox" id="consent" required class="mt-1 mr-3" disabled>
+                                <label for="consent" class="text-sm text-gray-400">I consent to being contacted by Learn by Design regarding ABA therapy services. *</label>
                             </div>
-                            <button type="submit" class="bg-magenta text-white px-8 py-4 rounded-lg font-medium hover:bg-opacity-90 transition w-full text-lg">Send Message</button>
+                            <button type="submit" class="bg-gray-400 text-white px-8 py-4 rounded-lg font-medium w-full text-lg cursor-not-allowed" disabled>Send Message</button>
                         </form>
                     </div>
 
-                    <!-- Contact Information -->
-                    <div class="bg-gradient-to-b from-blueberry to-magenta p-8 rounded-xl text-white">
-                        <h3 class="text-2xl font-bold mb-8">Get in Touch</h3>
-                        <div class="space-y-8">
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-2xl mt-1 mr-4 text-white"></i>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Our Location</h4>
-                                    <p class="mb-2">123 Therapy Lane, Suite 200<br>Design City, DC 12345</p>
-                                    <p class="text-sm opacity-90">Convenient parking available<br>Wheelchair accessible</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-phone-alt text-2xl mt-1 mr-4 text-white"></i>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Call Us</h4>
-                                    <p class="mb-2">(555) 123-4567</p>
-                                    <p class="text-sm opacity-90">We return calls within 4 hours during business hours</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-envelope text-2xl mt-1 mr-4 text-white"></i>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Email Us</h4>
-                                    <p class="mb-2">info@learnbydesign.com</p>
-                                    <p class="text-sm opacity-90">We respond to emails within 24 hours</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <i class="fas fa-clock text-2xl mt-1 mr-4 text-white"></i>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-2">Business Hours</h4>
-                                    <p class="mb-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                                    <p class="mb-1">Saturday: 9:00 AM - 2:00 PM</p>
-                                    <p class="mb-2">Sunday: Closed</p>
-                                    <p class="text-sm opacity-90">Emergency consultations available by appointment</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-12">
-                            <h4 class="font-bold text-lg mb-4">Follow Us</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
-                                    <i class="fab fa-facebook-f text-xl"></i>
-                                </a>
-                                <a href="#" class="bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
-                                    <i class="fab fa-instagram text-xl"></i>
-                                </a>
-                                <a href="#" class="bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
-                                    <i class="fab fa-linkedin-in text-xl"></i>
-                                </a>
-                                <a href="#" class="bg-white bg-opacity-20 w-12 h-12 rounded-full flex items-center justify-center hover:bg-opacity-30 transition">
-                                    <i class="fab fa-youtube text-xl"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <!-- FAQ Section -->
@@ -228,7 +186,7 @@
                         </div>
                         <div class="bg-gray-50 p-6 rounded-lg">
                             <h3 class="text-xl font-bold text-magenta mb-3">Can parents observe sessions?</h3>
-                            <p class="text-sage">Absolutely! We encourage parent involvement and provide training so you can support your child's progress at home.</p>
+                            <p class="text-sage">Absolutely! We encourage caregiver involvement and provide training so you can support your child's progress at home.</p>
                         </div>
                     </div>
                 </div>
@@ -239,13 +197,13 @@
     <!-- Footer -->
     <footer class="bg-blueberry text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-4">
-                        <img src="logos/IconOnly_Transparent_NoBuffer.png" alt="Learn by Design Logo" class="h-10 w-auto">
+                        <img src="Logos/IconOnly_Transparent_NoBuffer.png" alt="Learn by Design Logo" class="h-10 w-auto">
                         <h3 class="text-xl font-bold">Learn by Design</h3>
                     </div>
-                    <p class="text-blue-100">Providing exceptional ABA therapy services with compassion and expertise since 2015.</p>
+                    <p class="text-blue-100">Providing exceptional ABA therapy services with compassion and expertise since 2025.</p>
                 </div>
                 
                 <div>
@@ -262,28 +220,17 @@
                 <div>
                     <h4 class="text-lg font-bold mb-4">Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Early Intervention</a></li>
-                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">School Readiness</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Early Development Support</a></li>
                         <li><a href="services.html" class="text-blue-100 hover:text-white transition">In-Home Therapy</a></li>
-                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Social Skills Groups</a></li>
-                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Parent Training</a></li>
+                        <li><a href="services.html" class="text-blue-100 hover:text-white transition">Caregiver Training</a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
-                    <p class="text-blue-100 mb-4">Subscribe to our newsletter for the latest updates and resources.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg w-full text-blueberry outline-none">
-                        <button type="submit" class="bg-magenta px-4 py-2 rounded-r-lg hover:bg-opacity-90 transition">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
+
             </div>
             
             <div class="border-t border-blue-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-blue-100 mb-4 md:mb-0">© 2023 Learn by Design. All rights reserved.</p>
+                <p class="text-blue-100 mb-4 md:mb-0">© 2025 Learn by Design. All rights reserved.</p>
                 <div class="flex space-x-6">
                     <a href="#" class="text-blue-100 hover:text-white transition">Privacy Policy</a>
                     <a href="#" class="text-blue-100 hover:text-white transition">Terms of Service</a>
