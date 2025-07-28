@@ -90,127 +90,79 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// Form Submission with Accessibility
-const contactForm = document.getElementById('contact-form');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Clear previous errors
-        clearFormErrors();
-        
-        // Get form values
-        const formData = getFormData();
-        
-        // Validate form
-        const errors = validateForm(formData);
-        
-        if (errors.length > 0) {
-            displayFormErrors(errors);
-            // Focus first error field
-            const firstErrorField = document.querySelector('.form-error').previousElementSibling;
-            if (firstErrorField) firstErrorField.focus();
-            return;
-        }
-        
-        // Show success message
-        showStatusMessage('success', `Thank you, ${formData.name}! We've received your message and will contact you soon.`);
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Focus back to first form field
-        const firstField = contactForm.querySelector('input, textarea, select');
-        if (firstField) firstField.focus();
-    });
-}
-
-function getFormData() {
-    const name = document.getElementById('name')?.value || document.getElementById('first-name')?.value;
-    const lastName = document.getElementById('last-name')?.value;
-    const email = document.getElementById('email')?.value;
-    const phone = document.getElementById('phone')?.value;
-    const message = document.getElementById('message')?.value;
+// Contact Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
     
-    return {
-        name: name + (lastName ? ` ${lastName}` : ''),
-        email,
-        phone,
-        message
-    };
-}
-
-function validateForm(data) {
-    const errors = [];
-    
-    if (!data.name || data.name.trim().length < 2) {
-        errors.push({ field: 'name', message: 'Name must be at least 2 characters long' });
-    }
-    
-    if (!data.email || !isValidEmail(data.email)) {
-        errors.push({ field: 'email', message: 'Please enter a valid email address' });
-    }
-    
-    if (!data.phone || data.phone.trim().length < 10) {
-        errors.push({ field: 'phone', message: 'Please enter a valid phone number' });
-    }
-    
-    return errors;
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function displayFormErrors(errors) {
-    errors.forEach(error => {
-        const field = document.getElementById(error.field) || document.getElementById('first-name');
-        if (field) {
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'form-error';
-            errorDiv.innerHTML = `<i class="fas fa-exclamation-triangle form-error-icon" aria-hidden="true"></i>${error.message}`;
-            errorDiv.setAttribute('role', 'alert');
-            field.parentNode.appendChild(errorDiv);
-            field.setAttribute('aria-invalid', 'true');
-            field.setAttribute('aria-describedby', errorDiv.id = `${error.field}-error`);
-        }
-    });
-}
-
-function clearFormErrors() {
-    const errors = document.querySelectorAll('.form-error');
-    errors.forEach(error => error.remove());
-    
-    const invalidFields = document.querySelectorAll('[aria-invalid="true"]');
-    invalidFields.forEach(field => {
-        field.removeAttribute('aria-invalid');
-        field.removeAttribute('aria-describedby');
-    });
-}
-
-function showStatusMessage(type, message) {
-    // Remove existing status messages
-    const existingMessages = document.querySelectorAll('.status-message');
-    existingMessages.forEach(msg => msg.remove());
-    
-    const statusDiv = document.createElement('div');
-    statusDiv.className = `status-message status-${type}`;
-    statusDiv.setAttribute('role', 'alert');
-    statusDiv.setAttribute('aria-live', 'polite');
-    statusDiv.innerHTML = `
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-triangle'}" aria-hidden="true"></i>
-        ${message}
-    `;
-    
-    // Insert before the form
     if (contactForm) {
-        contactForm.parentNode.insertBefore(statusDiv, contactForm);
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        const formMessage = document.getElementById('formMessage');
         
-        // Auto-remove after 5 seconds
-        setTimeout(() => {
-            statusDiv.remove();
-        }, 5000);
+        // Google Apps Script URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzujWz8hAGfWrV6wO1TCwFumFoR-E0hyZe_1yB5Dbt8S1cnd4fgkzr0bDLCmXeQCoIS/exec';
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            btnLoading.classList.remove('hidden');
+            formMessage.classList.add('hidden');
+            
+            // Get form data
+            const formData = {
+                name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`.trim(),
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                childAge: document.getElementById('childAge').value,
+                serviceInterest: document.getElementById('serviceInterest').value,
+                message: document.getElementById('message').value,
+                consent: document.getElementById('consent').checked
+            };
+            
+            // Send data to Google Apps Script
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
+                    contactForm.reset();
+                } else {
+                    showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (555) 123-4567.', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (555) 123-4567.', 'error');
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.classList.remove('hidden');
+                btnLoading.classList.add('hidden');
+            });
+        });
+        
+        function showMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.className = `mt-4 text-center p-4 rounded-lg ${type === 'success' ? 'bg-green-100 text-green-800 border border-green-300' : 'bg-red-100 text-red-800 border border-red-300'}`;
+            formMessage.classList.remove('hidden');
+            
+            // Auto-hide success messages after 8 seconds
+            if (type === 'success') {
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 8000);
+            }
+        }
     }
-} 
+}); 

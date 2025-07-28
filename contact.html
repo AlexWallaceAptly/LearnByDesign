@@ -67,74 +67,51 @@
             <div class="max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <!-- Contact Form -->
-                    <div class="bg-gray-100 p-8 rounded-xl shadow-lg relative">
-                        <!-- Coming Soon Overlay -->
-                        <div class="absolute inset-0 bg-gray-50 bg-opacity-90 rounded-xl flex items-center justify-center z-10">
-                            <div class="text-center max-w-md mx-auto px-4">
-                                <div class="bg-white p-8 rounded-xl shadow-md">
-                                    <i class="fas fa-clock text-6xl text-gray-400 mb-4"></i>
-                                    <h3 class="text-2xl font-bold text-gray-600 mb-4">Coming Soon</h3>
-                                    <p class="text-gray-500 text-center">Our contact form is currently being updated. Please call us directly at <strong>(555) 123-4567</strong> or email <strong>info@learnbydesign.com</strong> to get in touch.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <h2 class="text-3xl font-bold text-blueberry mb-6">Send Us a Message</h2>
+                        <p class="text-sage mb-8">Fill out the form below and we'll get back to you within 24 hours to discuss how we can help your child.</p>
                         
-                        <h2 class="text-3xl font-bold text-gray-400 mb-6">Send Us a Message</h2>
-                        <p class="text-gray-400 mb-8">Fill out the form below and we'll get back to you within 24 hours to discuss how we can help your child.</p>
-                        
-                        <form id="contact-form" class="space-y-6 opacity-30" aria-labelledby="contact-form-title" novalidate>
+                        <form id="contactForm" class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="form-group">
-                                    <label for="first-name" class="block text-sage font-medium mb-2">First Name *</label>
+                                <div>
+                                    <label for="firstName" class="block text-sage font-medium mb-2">First Name *</label>
                                     <input type="text" 
-                                           id="first-name" 
-                                           name="first-name"
+                                           id="firstName" 
+                                           name="firstName"
                                            required 
-                                           aria-required="true"
-                                           aria-describedby="first-name-help"
-                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition">
-                                    <div id="first-name-help" class="sr-only">Enter your first name as it should appear in our records</div>
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-magenta focus:border-transparent outline-none transition">
                                 </div>
-                                <div class="form-group">
-                                    <label for="last-name" class="block text-sage font-medium mb-2">Last Name *</label>
+                                <div>
+                                    <label for="lastName" class="block text-sage font-medium mb-2">Last Name *</label>
                                     <input type="text" 
-                                           id="last-name" 
-                                           name="last-name"
+                                           id="lastName" 
+                                           name="lastName"
                                            required 
-                                           aria-required="true"
-                                           aria-describedby="last-name-help"
-                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
-                                    <div id="last-name-help" class="sr-only">Enter your family or last name</div>
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-magenta focus:border-transparent outline-none transition">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            
+                            <div>
                                 <label for="email" class="block text-sage font-medium mb-2">Email Address *</label>
                                 <input type="email" 
                                        id="email" 
                                        name="email"
                                        required 
-                                       aria-required="true"
-                                       aria-describedby="email-help"
-                                       autocomplete="email"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
-                                <div id="email-help" class="sr-only">We'll use this email to respond to your inquiry</div>
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-magenta focus:border-transparent outline-none transition">
                             </div>
-                            <div class="form-group">
+                            
+                            <div>
                                 <label for="phone" class="block text-sage font-medium mb-2">Phone Number *</label>
                                 <input type="tel" 
                                        id="phone" 
                                        name="phone"
                                        required 
-                                       aria-required="true"
-                                       aria-describedby="phone-help"
-                                       autocomplete="tel"
-                                       pattern="[0-9\s\-\+\(\)]*"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
-                                <div id="phone-help" class="sr-only">Include area code for best response time</div>
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-magenta focus:border-transparent outline-none transition">
                             </div>
+                            
                             <div>
-                                <label for="child-age" class="block text-sage font-medium mb-2">Child's Age</label>
-                                <select id="child-age" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
+                                <label for="childAge" class="block text-sage font-medium mb-2">Child's Age</label>
+                                <select id="childAge" name="childAge" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-magenta focus:border-transparent outline-none transition">
                                     <option value="">Select age range</option>
                                     <option value="2-3">2-3 years</option>
                                     <option value="4-5">4-5 years</option>
@@ -143,29 +120,91 @@
                                     <option value="13+">13+ years</option>
                                 </select>
                             </div>
+                            
                             <div>
-                                <label for="service-interest" class="block text-sage font-medium mb-2">Service of Interest</label>
-                                <select id="service-interest" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition" disabled>
+                                <label for="serviceInterest" class="block text-sage font-medium mb-2">Service of Interest</label>
+                                <select id="serviceInterest" name="serviceInterest" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-magenta focus:border-transparent outline-none transition">
                                     <option value="">Select a service</option>
-                                                                <option value="early-development">Early Development Support</option>
-                            <option value="in-home">In-Home Therapy</option>
-                            <option value="caregiver-training">Caregiver Training</option>
+                                    <option value="early-development">Early Development Support</option>
+                                    <option value="in-home">In-Home Therapy</option>
+                                    <option value="caregiver-training">Caregiver Training</option>
                                     <option value="not-sure">Not sure - need guidance</option>
                                 </select>
                             </div>
+                            
                             <div>
-                                <label for="message" class="block text-sage font-medium mb-2">Message</label>
-                                <textarea id="message" rows="4" placeholder="Tell us about your child's needs, your goals, or any questions you have..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blueberry focus:border-blueberry outline-none transition resize-vertical" disabled></textarea>
+                                <label for="message" class="block text-sage font-medium mb-2">Message *</label>
+                                <textarea id="message" 
+                                          name="message"
+                                          rows="4" 
+                                          required
+                                          placeholder="Tell us about your child's needs, your goals, or any questions you have..." 
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-magenta focus:border-transparent outline-none transition resize-vertical"></textarea>
                             </div>
+                            
                             <div class="flex items-start">
-                                <input type="checkbox" id="consent" required class="mt-1 mr-3" disabled>
-                                <label for="consent" class="text-sm text-gray-400">I consent to being contacted by Learn by Design regarding ABA therapy services. *</label>
+                                <input type="checkbox" id="consent" name="consent" required class="mt-1 mr-3">
+                                <label for="consent" class="text-sm text-sage">I consent to being contacted by Learn by Design regarding ABA therapy services. *</label>
                             </div>
-                            <button type="submit" class="bg-gray-400 text-white px-8 py-4 rounded-lg font-medium w-full text-lg cursor-not-allowed" disabled>Send Message</button>
+                            
+                            <button type="submit" id="submitBtn" class="bg-gradient-to-r from-blueberry to-magenta text-white px-8 py-4 rounded-lg font-medium w-full text-lg hover:shadow-lg transition duration-300 disabled:opacity-50">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading hidden">Sending...</span>
+                            </button>
+                            
+                            <div id="formMessage" class="mt-4 text-center hidden"></div>
                         </form>
                     </div>
 
-                    
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h2 class="text-3xl font-bold text-blueberry mb-6">Get in Touch</h2>
+                            <div class="space-y-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="bg-magenta text-white p-3 rounded-lg">
+                                        <i class="fas fa-phone text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-blueberry">Phone</h3>
+                                        <p class="text-sage">(555) 123-4567</p>
+                                        <p class="text-sm text-gray-500">Mon-Fri 8:00 AM - 6:00 PM</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="bg-magenta text-white p-3 rounded-lg">
+                                        <i class="fas fa-envelope text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-blueberry">Email</h3>
+                                        <p class="text-sage">info@learnbydesign.com</p>
+                                        <p class="text-sm text-gray-500">We respond within 24 hours</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-4">
+                                    <div class="bg-magenta text-white p-3 rounded-lg">
+                                        <i class="fas fa-map-marker-alt text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-blueberry">Location</h3>
+                                        <p class="text-sage">Serving families throughout<br>Northern California</p>
+                                        <p class="text-sm text-gray-500">In-home services available</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-blueberry to-magenta p-8 rounded-xl text-white">
+                            <h3 class="text-2xl font-bold mb-4">Emergency Support</h3>
+                            <p class="mb-4">If you're experiencing a behavioral emergency or crisis situation, please contact your local emergency services or:</p>
+                            <div class="space-y-2">
+                                <p><strong>Crisis Hotline:</strong> 988</p>
+                                <p><strong>Emergency:</strong> 911</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- FAQ Section -->
