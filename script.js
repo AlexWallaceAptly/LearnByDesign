@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const btnLoading = submitBtn.querySelector('.btn-loading');
         const formMessage = document.getElementById('formMessage');
         
-        // Google Apps Script URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxaOoMVxzYV3DIUzbRHd5l6_J1_dEfCGa0umFGYVajZPAsW1E6ZrozXl3Km82YC0rad/exec';
+        // Google Apps Script URL - REPLACE WITH YOUR NEW DEPLOYMENT URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTSxlTGmpBJOkqNkV-Ui5svddxQzMZaJ1rsXNFT0ylMUP8bvhsfCxLw_noQr2aoWQr/exec';
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
