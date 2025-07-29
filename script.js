@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formMessage = document.getElementById('formMessage');
         
         // Google Apps Script URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzujWz8hAGfWrV6wO1TCwFumFoR-E0hyZe_1yB5Dbt8S1cnd4fgkzr0bDLCmXeQCoIS/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxaOoMVxzYV3DIUzbRHd5l6_J1_dEfCGa0umFGYVajZPAsW1E6ZrozXl3Km82YC0rad/exec';
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
