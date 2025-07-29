@@ -137,12 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     showMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
                     contactForm.reset();
                 } else {
-                    showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (555) 123-4567.', 'error');
+                    showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (530) 919-6248.', 'error');
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (555) 123-4567.', 'error');
+                showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (530) 919-6248.', 'error');
             })
             .finally(() => {
                 // Reset button state

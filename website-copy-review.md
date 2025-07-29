@@ -68,22 +68,8 @@
 - Compassionate Care  
 - Data-Driven
 
-### Testimonials Section (Homepage Preview)
-**Section Title:** What Families Say
-
-**Section Description:** Hear from parents who have experienced the Learn by Design difference.
-
-#### Testimonial 1
-- **Quote:** "Learn by Design transformed our son's ability to communicate. In just 6 months, he went from being non-verbal to using short sentences. The therapists are amazing!"
-- **Attribution:** Jessica M., Parent of 4-year-old
-
-#### Testimonial 2  
-- **Quote:** "The school readiness program prepared our daughter so well for kindergarten. Her teachers can't believe the progress she's made in such a short time."
-- **Attribution:** David R., Parent of 5-year-old
-
-#### Testimonial 3
-- **Quote:** "What sets Learn by Design apart is their commitment to the whole family. They've taught us strategies that work beyond therapy sessions. Truly life-changing."
-- **Attribution:** Sarah P., Parent of 7-year-old
+### ~~Testimonials Section~~ (Removed)
+**Note:** Testimonials section has been removed from the homepage.
 
 ---
 
