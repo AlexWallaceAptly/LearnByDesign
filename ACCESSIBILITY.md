@@ -169,6 +169,6 @@ Tested with:
 ## Contact for Accessibility Issues
 If you encounter any accessibility barriers on this website, please contact us at:
 - Email: accessibility@learnbydesign.com
-- Phone: (555) 123-4567
+- Phone: (530) 919-6248
 
 We are committed to making our website accessible to all users and welcome feedback for continuous improvement. 

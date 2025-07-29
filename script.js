@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const btnLoading = submitBtn.querySelector('.btn-loading');
         const formMessage = document.getElementById('formMessage');
         
-        // Google Apps Script URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxaOoMVxzYV3DIUzbRHd5l6_J1_dEfCGa0umFGYVajZPAsW1E6ZrozXl3Km82YC0rad/exec';
+        // Google Apps Script URL - REPLACE WITH YOUR NEW DEPLOYMENT URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTSxlTGmpBJOkqNkV-Ui5svddxQzMZaJ1rsXNFT0ylMUP8bvhsfCxLw_noQr2aoWQr/exec';
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -137,12 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     showMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
                     contactForm.reset();
                 } else {
-                    showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (555) 123-4567.', 'error');
+                    showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (530) 919-6248.', 'error');
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (555) 123-4567.', 'error');
+                showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (530) 919-6248.', 'error');
             })
             .finally(() => {
                 // Reset button state
