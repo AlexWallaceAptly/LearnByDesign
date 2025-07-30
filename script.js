@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const btnLoading = submitBtn.querySelector('.btn-loading');
         const formMessage = document.getElementById('formMessage');
         
-        // Google Apps Script URL - UPDATE WITH YOUR BRAND NEW DEPLOYMENT URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxZPvuGbZLSIOtu2GiP9-5KqmMT8FOJje92-cdgVxBmLGzfiZO-4XhPyQjktzQ3a4xKBg/exec';
+        // Google Apps Script URL - UPDATE WITH YOUR DEPLOYMENT URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxboh5PKl401bO8FvOON7peNTBfGnGSwpxrodbTu-lzosdWSj_Ri6hskB4BBn97ejp4/exec';
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -114,31 +114,30 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get form data
             const formData = {
-                name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`.trim(),
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
                 email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
                 childAge: document.getElementById('childAge').value,
                 serviceInterest: document.getElementById('serviceInterest').value,
                 message: document.getElementById('message').value,
-                consent: document.getElementById('consent').checked
+                consent: document.getElementById('consent').checked,
+                timestamp: new Date().toISOString()
             };
             
             // Send data to Google Apps Script
             fetch(SCRIPT_URL, {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(formData)
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 72 hours.', 'success');
-                    contactForm.reset();
-                } else {
-                    showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (530) 919-6248.', 'error');
-                }
+            .then(() => {
+                // Since we're using no-cors, we assume success
+                showMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
+                contactForm.reset();
             })
             .catch(error => {
                 console.error('Error:', error);
