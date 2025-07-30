@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const btnLoading = submitBtn.querySelector('.btn-loading');
         const formMessage = document.getElementById('formMessage');
         
-        // Google Apps Script URL - REPLACE WITH YOUR NEW DEPLOYMENT URL
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTSxlTGmpBJOkqNkV-Ui5svddxQzMZaJ1rsXNFT0ylMUP8bvhsfCxLw_noQr2aoWQr/exec';
+        // Google Apps Script URL - UPDATE WITH YOUR BRAND NEW DEPLOYMENT URL
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxZPvuGbZLSIOtu2GiP9-5KqmMT8FOJje92-cdgVxBmLGzfiZO-4XhPyQjktzQ3a4xKBg/exec';
         
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    showMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.', 'success');
+                    showMessage('Thank you! Your message has been sent successfully. We\'ll get back to you within 72 hours.', 'success');
                     contactForm.reset();
                 } else {
                     showMessage('Sorry, there was an error sending your message. Please try again or call us directly at (530) 919-6248.', 'error');
