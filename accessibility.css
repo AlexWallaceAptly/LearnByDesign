@@ -65,6 +65,25 @@ select:focus {
     color: #5a2d91; /* Slightly darker for better contrast */
 }
 
+/* Fix gray text contrast issues */
+.text-gray-500 {
+    color: #374151; /* Much darker gray for better readability */
+}
+
+.text-gray-600 {
+    color: #1f2937; /* Dark gray for excellent contrast */
+}
+
+/* Fix light blue text contrast on dark backgrounds */
+.text-blue-100 {
+    color: #dbeafe; /* Slightly darker light blue for better contrast */
+}
+
+/* Ensure sage background has sufficient contrast with white text */
+.bg-sage {
+    background-color: #6b7f47; /* Darker sage for better contrast with white text */
+}
+
 /* Reduce Motion for Users with Vestibular Disorders */
 @media (prefers-reduced-motion: reduce) {
     *,
