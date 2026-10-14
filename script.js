@@ -119,13 +119,14 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    const clone = group.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    clone.querySelectorAll('img').forEach((img) => {
-        img.alt = '';
-    });
-    track.appendChild(clone);
-    marquee.classList.add('is-running');
+    if (track.querySelectorAll('.logo-marquee-group').length < 2) {
+        const clone = group.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('img').forEach((img) => {
+            img.alt = '';
+        });
+        track.appendChild(clone);
+    }
 
     toggle.addEventListener('click', () => {
         userPaused = !userPaused;
