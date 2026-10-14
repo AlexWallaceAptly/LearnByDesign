@@ -90,6 +90,71 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
+// Insurance logo marquee
+document.addEventListener('DOMContentLoaded', function() {
+    const marquee = document.querySelector('[data-logo-marquee]');
+    if (!marquee) return;
+
+    const track = marquee.querySelector('.logo-marquee-track');
+    const group = marquee.querySelector('.logo-marquee-group');
+    const toggle = marquee.querySelector('.logo-marquee-toggle');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let userPaused = false;
+    let hoverPaused = false;
+
+    function setToggleState() {
+        toggle.setAttribute('aria-pressed', userPaused ? 'true' : 'false');
+        toggle.setAttribute('aria-label', userPaused ? 'Play insurance logos' : 'Pause insurance logos');
+        const icon = toggle.querySelector('i');
+        icon.classList.toggle('fa-pause', !userPaused);
+        icon.classList.toggle('fa-play', userPaused);
+    }
+
+    function applyMotion() {
+        marquee.classList.toggle('is-paused', userPaused || hoverPaused);
+    }
+
+    if (reducedMotion) {
+        marquee.classList.add('is-static');
+        return;
+    }
+
+    const clone = group.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    clone.querySelectorAll('img').forEach((img) => {
+        img.alt = '';
+    });
+    track.appendChild(clone);
+    marquee.classList.add('is-running');
+
+    toggle.addEventListener('click', () => {
+        userPaused = !userPaused;
+        setToggleState();
+        applyMotion();
+    });
+
+    marquee.addEventListener('mouseenter', () => {
+        hoverPaused = true;
+        applyMotion();
+    });
+
+    marquee.addEventListener('mouseleave', () => {
+        hoverPaused = false;
+        applyMotion();
+    });
+
+    marquee.addEventListener('focusin', () => {
+        hoverPaused = true;
+        applyMotion();
+    });
+
+    marquee.addEventListener('focusout', (event) => {
+        if (marquee.contains(event.relatedTarget)) return;
+        hoverPaused = false;
+        applyMotion();
+    });
+});
+
 // Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');

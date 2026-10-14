@@ -201,16 +201,28 @@
                             <h3 class="text-2xl font-bold text-blueberry mb-4">Insurance & Payment</h3>
                             <p class="text-sage mb-6">We accept the following insurance plans as well as private pay options to make services accessible for your family.</p>
                             
-                            <div class="grid grid-cols-3 gap-4 mb-6">
-                                <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center h-24">
-                                    <img src="assets/Cigna 256x256 logo.avif" alt="Cigna Insurance" class="max-h-24 w-auto object-contain">
+                            <div class="logo-marquee mb-6" data-logo-marquee>
+                                <div class="logo-marquee-viewport" aria-label="Accepted insurance plans">
+                                    <div class="logo-marquee-track">
+                                        <div class="logo-marquee-group">
+                                            <div class="logo-slot logo-slot-cigna">
+                                                <img src="assets/Cigna-Healthcare-logo.svg" alt="Cigna Healthcare">
+                                            </div>
+                                            <div class="logo-slot logo-slot-anthem">
+                                                <img src="assets/ANTM.webp" alt="Anthem Insurance">
+                                            </div>
+                                            <div class="logo-slot logo-slot-aetna">
+                                                <img src="assets/Aetna-Logo-700x394.png" alt="Aetna Insurance">
+                                            </div>
+                                            <div class="logo-slot logo-slot-kaiser">
+                                                <img src="assets/Kaiser-Permanente-logo.svg" alt="Kaiser Permanente Insurance">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center h-24">
-                                    <img src="assets/ANTM.webp" alt="Anthem Insurance" class="max-h-24 w-auto object-contain">
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg flex items-center justify-center h-24">
-                                    <img src="assets/Aetna-Logo-700x394.png" alt="Aetna Insurance" class="max-h-16 w-auto object-contain">
-                                </div>
+                                <button type="button" class="logo-marquee-toggle" aria-pressed="false" aria-label="Pause insurance logos">
+                                    <i class="fas fa-pause" aria-hidden="true"></i>
+                                </button>
                             </div>
                             
                             <div class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">

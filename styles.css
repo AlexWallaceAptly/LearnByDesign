@@ -53,4 +53,134 @@
 
 .testimonial-card {
     background: linear-gradient(135deg, rgba(214, 51, 132, 0.05) 0%, rgba(111, 66, 193, 0.05) 100%);
+}
+
+.logo-marquee-viewport {
+    position: relative;
+    overflow: visible;
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    padding: 1.35rem 0;
+}
+
+.logo-marquee.is-running .logo-marquee-viewport {
+    overflow: hidden;
+}
+
+.logo-marquee-viewport::before,
+.logo-marquee-viewport::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2.75rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.logo-marquee.is-running .logo-marquee-viewport::before,
+.logo-marquee.is-running .logo-marquee-viewport::after {
+    display: block;
+}
+
+.logo-marquee-viewport::before {
+    left: 0;
+    background: linear-gradient(to right, #f9fafb, transparent);
+}
+
+.logo-marquee-viewport::after {
+    right: 0;
+    background: linear-gradient(to left, #f9fafb, transparent);
+}
+
+.logo-marquee-track {
+    display: flex;
+    width: auto;
+    justify-content: center;
+}
+
+.logo-marquee.is-running .logo-marquee-track {
+    width: max-content;
+    justify-content: flex-start;
+    animation: logo-marquee 22s linear infinite;
+}
+
+.logo-marquee.is-paused .logo-marquee-track {
+    animation-play-state: paused;
+}
+
+.logo-marquee-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.75rem;
+    padding-right: 0;
+}
+
+.logo-marquee.is-running .logo-marquee-group {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-right: 2.75rem;
+}
+
+.logo-slot {
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    flex: none;
+    overflow: hidden;
+}
+
+.logo-slot img {
+    width: auto;
+    display: block;
+}
+
+/* Source files include empty padding. Scale each one so the wordmark itself is about 2.5rem tall. */
+.logo-slot-cigna img { height: 4rem; }
+.logo-slot-anthem img { height: calc(2.5rem * 256 / 40); }
+.logo-slot-aetna img { height: calc(2.5rem * 394 / 144); }
+.logo-slot-kaiser img { height: 2.5rem; }
+
+.logo-marquee-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.75rem auto 0;
+    border: 0;
+    border-radius: 9999px;
+    background: #f3f4f6;
+    color: var(--blueberry);
+}
+
+.logo-marquee-toggle:hover {
+    background: #e5e7eb;
+}
+
+.logo-marquee.is-static .logo-marquee-viewport {
+    overflow: visible;
+}
+
+.logo-marquee.is-static .logo-marquee-viewport::before,
+.logo-marquee.is-static .logo-marquee-viewport::after {
+    display: none;
+}
+
+.logo-marquee.is-static .logo-marquee-track,
+.logo-marquee.is-static .logo-marquee-group {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none !important;
+}
+
+.logo-marquee.is-static .logo-marquee-toggle {
+    display: none;
+}
+
+@keyframes logo-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 } 
