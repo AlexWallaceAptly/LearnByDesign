@@ -186,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 phone: document.getElementById('phone').value,
                 childAge: document.getElementById('childAge').value,
                 serviceInterest: document.getElementById('serviceInterest').value,
+                insurance: document.getElementById('insurance').value,
                 message: document.getElementById('message').value,
                 consent: document.getElementById('consent').checked,
                 timestamp: new Date().toISOString()
